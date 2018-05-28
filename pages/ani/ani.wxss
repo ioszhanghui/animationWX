@@ -1,0 +1,9 @@
+/* pages/ani/ani.wxss */
+.view1{
+  width: 100rpx;
+  height: 100rpx;
+  background: red;
+   position: absolute;
+  left: -10px;
+  top: -10px; 
+}

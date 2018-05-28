@@ -1,0 +1,5 @@
+<scroll-view scroll-y="true" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" upper-threshold="0">
+<view class='view1'></view>
+<view class='view2'></view>
+<view class='view3'></view>
+</scroll-view>

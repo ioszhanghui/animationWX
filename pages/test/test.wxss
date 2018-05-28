@@ -1,0 +1,21 @@
+scroll-view{
+
+  width: 400px;
+  height: 400px;
+}
+
+view{
+  width: 400px;
+  height: 400px;
+}
+.view1{
+  background: red;
+  height: 50px;
+}
+.view2{
+  background: yellow;
+}
+.view3{
+  background: green;
+  height: 50px;
+}

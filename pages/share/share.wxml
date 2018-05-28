@@ -1,0 +1,2 @@
+<button bindtap="share">分享</button>
+<view class='alert'></view>

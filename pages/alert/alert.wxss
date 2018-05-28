@@ -1,0 +1,57 @@
+page{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: #ddd;
+}
+.alertBody{
+  width: 500rpx;
+  height: 520rpx;
+  position: absolute;
+  border-radius: 20rpx;
+  top:230rpx; 
+  display: flex;
+  flex-direction: column;
+}
+.closeBtn{
+
+  width: 70rpx;
+  height: 70rpx;
+   align-self: flex-end;  
+  margin-right: -30rpx;
+  margin-top: -20rpx;
+}
+.soundView{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 207rpx;
+  margin-left: 118rpx;
+}
+.text{
+  font-size: 32rpx;
+  color: #188124;
+  font-weight: 500;
+}
+.noGou{
+  width: 34rpx;
+  height: 34rpx;
+   margin-left: 156rpx; 
+}
+.shakeView{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 52rpx;
+  margin-left: 118rpx;
+}
+.shakeGou{
+  margin-left: 122rpx;
+}
+
+.haveGou{
+  width: 54rpx;
+  height: 54rpx;
+  margin-top: -10rpx;
+  margin-left: -10rpx;
+}

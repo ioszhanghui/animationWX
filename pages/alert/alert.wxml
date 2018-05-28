@@ -1,0 +1,17 @@
+<button bindtap="alertShow" style='width:100px;height:50px;'>点击弹出</button>
+<view style='background:url(../../images/bg@2x.png) no-repeat;background-size:cover;' class="alertBody" wx:if="{{isShow}}">
+<view style='background:url(../../images/close@2x.png) no-repeat;background-size:cover;' class='closeBtn' bindtap='closeAction'></view>
+<view class='soundView'> 
+  <text class='text'>音效</text>
+  <view class='noGou' style='background:url(../../images/area@2x.png) no-repeat;background-size:cover;' >
+  <view class='haveGou' style='background:url(../../images/select@2x.png) no-repeat;background-size:cover;'></view>
+  </view>
+  </view>
+<view class='shakeView'> 
+  <text class='text'>摇一摇</text>
+  <view class='noGou shakeGou' style='background:url(../../images/area@2x.png) no-repeat;background-size:cover;' >
+   <view class='haveGou' style='background:url(../../images/select@2x.png) no-repeat;background-size:cover;'></view>
+  </view>
+</view>
+
+</view>

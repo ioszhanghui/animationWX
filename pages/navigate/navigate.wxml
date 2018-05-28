@@ -1,0 +1,4 @@
+<!-- <navigator url="../ani/ani">
+<button bindtap='locationChoose'>跳转动画</button>
+</navigator> -->
+<button bindtap='locationChoose'>跳转动画</button>

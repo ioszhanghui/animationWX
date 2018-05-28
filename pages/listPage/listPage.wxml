@@ -1,0 +1,16 @@
+<scroll-view scroll-y="true" bindscrolltolower="scrolltolower" bindscrolltoupper="scrolltoupper" lower-threshold="0">
+    <navigator url='' wx:for="{{lists}}">
+    <view class='itemBody'>
+       <image src='{{item.iconImage}}' class='icon'></image>
+      <view class='product'>
+        <text class='title'>{{item.itemName}}</text>
+        <text class='desc'>{{item.des}}</text>
+        <view> <text class='smallText'>额度:</text><text class='loanCount'>{{item.loanMount}}</text></view>
+      </view> 
+      <!-- <view class='fill'></view> -->
+      <view class='apply'>已申请</view>
+    </view>
+    <view class='addLine'></view>
+    </navigator>
+    <view wx:if="{{isLoading}}" class='loading'>{{text}}</view>
+</scroll-view>

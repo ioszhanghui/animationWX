@@ -1,0 +1,74 @@
+    <!-- <block wx:for="{{list}}" >
+<view style="left:'{{item.left}}px';top:'{{item.top}}px';position:absolute;" animation="{{item.animation}}">{{index}}</view> 
+</block>  
+<button bindtap='click'>1111</button>  -->
+
+  <!-- <view style='background:green;width:50px;heigth:50px;position:absolute;left:100px;top:100px;'></view> 
+<view style='background:green;width:50px;heigth:50px;position:absolute;left:0px;top:0px;'></view>  
+<view style='background:green;width:50px;heigth:50px;position:absolute;left:200px;top:200px;'></view>    -->
+
+  <!-- <view  wx:for="{{list}}" style="top:'{{index*100}}px';left:100px;position:absolute;">{{index}}</view>   -->
+<!-- 
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i">
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j">
+    <view wx:if="{{i <= j}}">
+      {{i}} * {{j}} = {{i * j}}
+    </view>
+  </view>
+</view> -->
+<!-- <view class='view1' animation="{{ani.animation}}"></view>
+<button bindtap='click'>点击</button> -->
+<!-- <navigator url='../logs/logs'>
+<button>跳转下一个页面</button>
+</navigator> -->
+
+<!--导航的跳转-->
+<!-- <view class="btn-area">
+  <navigator url="../navigate/navigate?title=navigate" hover-class="navigator-hover">跳转到新页面</navigator>
+  <navigator url="../redirect/redirect?title=redirect" open-type="redirect" hover-class="other-navigator-hover">在当前页打开</navigator>
+  <navigator url="../navigate/navigate" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator>
+  <navigator target="miniProgram" open-type="navigate" app-id="wx2122b9c74dd3b917" path="" extra-data="" version="release">打开绑定的小程序</navigator>
+</view> -->
+<view class="container1">
+
+ <view class="item1">
+ 1
+ </view>
+
+<view class="item1">
+ 2
+ </view>
+
+ <view class="item1">
+ 3
+ </view>
+
+ <view class="item1">
+ 4
+ </view>
+  <view class="item1 special">
+ 5
+</view> 
+   
+  <view class="item1">
+ 6
+ </view>
+  <view class="item1">
+ 7
+ </view>
+  <view class="item1">
+ 8
+ </view>
+   <view class="item1">
+ 9
+ </view>
+   <view class="item1">
+ 10
+ </view> 
+
+</view>
+
+<view class='contain2'>
+<view class='sub2'></view>
+<view class='sub3'> </view>
+</view>

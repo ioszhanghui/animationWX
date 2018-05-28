@@ -1,0 +1,18 @@
+ <!-- <view wx:for="{{[{one:'1'}]}}" animation="{{animation}}" class="view1"></view>  -->
+
+<!-- <block wx:for="{{indexs}}">
+ <view wx:key="{{index}}索引" animation="{{list[index].ani}}"  wx:if="{{index<count}}" wx:if="{{show}}" class="view1" style="left:'{{left}}px';top:'{{top}}px';"></view> 
+</block> -->
+       
+        <view wx:key="{{index}}索引" animation="{{list[0].ani}}"  wx:if="{{show}}" class="view1" style="{{style}}"></view> 
+         <!-- <view wx:key="{{index}}索引" animation="{{list[1].ani}}" wx:if="{{show}}" class="view1" style="{{style}}"></view> 
+          <view wx:key="{{index}}索引" animation="{{list[2].ani}}" wx:if="{{show}}" class="view1" style="{{style}}"></view>  -->
+
+    <!-- <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="{{index}}索引" animation="{{list[index].ani}}"  wx:if="{{index<count}}" class="view1"></view>   -->
+    <button bindtap='click' size="mini">click</button>
+    <button bindtap='remove' size="mini">remove</button>
+ 
+  <!-- <view wx:for="{{list}}" animation="{{animation}}" class="view1"></view>    -->
+   <!-- <view wx:for="{{list}}" wx:key="{{item.index}}" animation="{{item.ani}}" class="view1"></view>   -->
+
+   <view style='{{style}}' class="view1" animation="{{animation}}" animation="{{resetAni}}"> 111</view>
