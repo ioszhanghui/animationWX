@@ -1,5 +1,16 @@
-<scroll-view scroll-y="true" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" upper-threshold="0">
+<!-- <scroll-view scroll-y="true" bindscrolltoupper="scrolltoupper" bindscrolltolower="scrolltolower" upper-threshold="0">
 <view class='view1'></view>
 <view class='view2'></view>
 <view class='view3'></view>
 </scroll-view>
+<text class='textview'>我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本我是文本111111</text> -->
+
+<!--测试 just-content类型-->
+  <view class='view11'>
+<view class='View22'></view> 
+</view> 
+<!--测试输入框-->
+<!-- <input type="number" pattern="[0-9]*"/>  
+<input type="number" value="" />
+<input type="tel" value="" /> -->
+<button bindtap='clickGoTO'>跳转传递参数</button>

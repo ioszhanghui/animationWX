@@ -4,33 +4,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    lists:[{
+      money:"50",
+      activity:"双十一活动",
+      reduce_acitivity:"满400减20",
+      outtime:"2018-0622 09:43:48",
+      isuse:"1"
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var obj =options;
+    console.log(decodeURIComponent(obj.imageurl)+"图片链接");
+    console.log(obj.imageurl+"图片链接");
   },
-  scrolltoupper:function(e){
 
-    console.log("下来加载"+e);
-  },
-  scrolltolower:function(e){
-    console.log("上来加载"+e);
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
     
   },
-  clickGoTO:function(){
-    wx.navigateTo({
-      url: '../sup/sup?imageurl=' + encodeURIComponent("https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=427903251,3687290121&fm=27&gp=0.jpg"),
-    })
-  } , 
+
   /**
    * 生命周期函数--监听页面显示
    */

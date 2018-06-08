@@ -1,152 +1,101 @@
+
+var util = require('../../utils/util.js');
+var network = require('../../utils/network.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    lists:[{
-      iconImage:"http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-      itemName:"借钱花花",
-      des:"期限 24期 年利率:36%",
-      loanMount:"2000.00"
-    }, {
-      iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-      itemName: "借钱花花",
-      des: "期限 24期 年利率:36%",
-      loanMount: "2000.00"
-      }, {
-        iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-        itemName: "借钱花花",
-        des: "期限 24期 年利率:36%",
-        loanMount: "2000.00"
-    }, {
-      iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-      itemName: "借钱花花",
-      des: "期限 24期 年利率:36%",
-      loanMount: "2000.00"
+    lists: [],//列表数据
+    totalPage: 3,
+    index: 1,
+    pageSize: 10,
+    param: {
+      pager_index: "1",
+      pager_size: "10",
+      loan_money: "",
+      loan_day: "",
+      condition: ""
     },
-    {
-      iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-      itemName: "借钱花花",
-      des: "期限 24期 年利率:36%",
-      loanMount: "2000.00"
-    }, {
-      iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-      itemName: "借钱花花",
-      des: "期限 24期 年利率:36%",
-      loanMount: "2000.00"
-    }, {
-      iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-      itemName: "借钱花花",
-      des: "期限 24期 年利率:36%",
-      loanMount: "2000.00"
-    }, {
-      iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-      itemName: "借钱花花",
-      des: "期限 24期 年利率:36%",
-      loanMount: "2000.00"
-    },
-    ],
-    text:"加载中...",
-    totalPage:5,
-    index:1,
-    pageSize:10,
-    isLoading:false
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    
+    isLoading:false,
+    complete:false
   },
   /**
  * 页面相关事件处理函数--监听用户下拉动作
  */
   scrolltolower:function(e){
-    console.log("上拉刷新");
+    var that =this;
+    console.log(this.data.index+"请求的页数");
+    if (this.data.index > this.data.totalPage) {
+      //如果正在加载 或者 已经请求完毕了
+      this.setData({
+        complete: true
+      });
+      return;
+    }
+    //正在请求还没响应过来
+    if (this.data.isLoading) {
 
+      return;
+    }
+    /*显示加载中的文字*/
+    this.setData({
+      isLoading: true
+    })
+
+    this.data.param.pager_index =this.data.index;
+    util.requestShopList(this.data.param, function (data) {
+      //拼接数据
+      that.data.lists = that.data.lists.concat(data.list);
+      that.setData({
+        lists: that.data.lists.concat(data.list),
+        isLoading: false,
+        index: ++that.data.index,
+        totalPage: data.total_pager
+      })
+  })
+  
+  },
+/*进入首页请求*/
+  onLoad:function(){
+
+    var that = this;
+    util.requestShopList(this.data.param, function (data) {
+      /*添加数据 去掉loading*/
+      /*添加数据 去掉loading*/
+      console.log(that.data.lists.concat(data.list) + "拼接的数据");
+      that.data.lists = that.data.lists.concat(data.list);
+      that.setData({
+        lists: that.data.lists.concat(data.list),
+        isLoading: false,
+        index: ++that.data.index,
+        totalPage: data.total_pager
+      })
+    })
+
+    network.RequestPost({
+      param: {
+        paramJson: JSON.stringify(that.data.param)
+        },
+      url: "http://123.57.70.38:8888/JJDKWeb/MarchProductInfo.spring",
+      success: function (res) {
+        console.log(res +"network结果");
+      },
+      fail: function () {
+
+      }
+    })
   },
   /**
   * 页面上拉触底事件的处理函数
   */
   scrolltoupper: function (e) {
-    /*显示加载中的文字*/
-    this.setData({
-      isLoading:true
-    })
     /*添加数据*/
-    if(this.data.index>this.data.totalPage||this.data.isLoading){
-      //如果正在加载 或者 已经请求完毕了
-      return;
-    }
-    setTimeout(function(){
-
-      var obj = {
-        iconImage: "http://123.57.70.38:18888/JQHHWeb/icon/jqhh_14.png",
-        itemName: "借钱花花",
-        des: "期限 24期 年利率:36%",
-        loanMount: "2000.00"
-      };
-
-      for(var i=0;i<this.data.pageSize;i++){
-        this.data.lists.push(obj);
-      }
-      /*添加数据 去掉loading*/
-      this.setData({
-        lists:this.data.lists,
-        isLoading:false
-      })
-
-    },3000);
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    
+    console.log("下拉加载");
+  this.setData({
+    index:1
+  })
   }
 })

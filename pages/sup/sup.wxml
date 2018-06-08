@@ -1,0 +1,34 @@
+<scroll-view scroll-y="true"> 
+<navigator url='' wx:for="{{lists}}">
+<view class='BgView'>
+<view class='vipIcon'style="background:url(../../images/sup.png) no-repeat;background-size:160rpx 200rpx;"></view>
+<view class='rightView'>
+    <view class='rightView1'>
+        <view class='rightViw11'>
+          <view class='activityIconBG'>
+            <view class='activityIcon'></view>
+          </view>
+          <text class='activity_name'>国庆活动</text>
+        </view>
+         <view class='rightView12'>
+            <view class='dot'> </view>
+            <view class='reduce'>减</view>
+            <view class='reduceText'>满400减40</view>
+        </view>
+         <view class='rightView13'>
+            <view class='dot'> </view>
+            <view class='reduceText outTime'>失效时间:2018-07-07 20:33:00</view>
+        </view>  
+    </view>
+    <view class='rightView2'>
+    <view class='useView'>
+    <view class='usetext'>
+        <text>立即</text>
+        <text>使用</text>
+    </view>
+    </view>
+    </view>
+</view>
+</view>
+</navigator>
+</scroll-view>

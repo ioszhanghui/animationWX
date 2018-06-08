@@ -1,16 +1,17 @@
 <scroll-view scroll-y="true" bindscrolltolower="scrolltolower" bindscrolltoupper="scrolltoupper" lower-threshold="0">
     <navigator url='' wx:for="{{lists}}">
     <view class='itemBody'>
-       <image src='{{item.iconImage}}' class='icon'></image>
+       <image src='http://123.57.70.38:8888/JQHHWeb{{item.product_icon_path}}' class='icon'></image>
       <view class='product'>
-        <text class='title'>{{item.itemName}}</text>
-        <text class='desc'>{{item.des}}</text>
-        <view> <text class='smallText'>额度:</text><text class='loanCount'>{{item.loanMount}}</text></view>
+        <text class='title'>{{item.product_name}}</text>
+        <text class='desc'>额度: {{item.product_min_amount}}-{{item.product_max_amount}}元  期限:{{item.term}}</text>
+        <view> <text class='smallText'>{{item.product_detail}}</text></view>
       </view> 
       <!-- <view class='fill'></view> -->
       <view class='apply'>已申请</view>
     </view>
     <view class='addLine'></view>
     </navigator>
-    <view wx:if="{{isLoading}}" class='loading'>{{text}}</view>
+    <view wx:if="{{isLoading}}" class='loading'>记载中...</view>
+    <view wx:if="{{complete}}" class='loading'>没有更多了</view>
 </scroll-view>

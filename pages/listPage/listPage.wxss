@@ -38,8 +38,9 @@ scroll-view{
 }
 
 .smallText{
-  font-size: 24rpx;
-  color: #1869ff;
+  font-size: 22rpx;
+  color: #ccc;
+  font-weight: 200;
 }
 .loanCount{
   color: #1869ff;
