@@ -1,31 +1,46 @@
 <scroll-view scroll-y="true"> 
 <navigator url='' wx:for="{{lists}}">
 <view class='BgView'>
-<view class='vipIcon'style="background:url(../../images/sup.png) no-repeat;background-size:160rpx 200rpx;"></view>
-<view class='rightView'>
+<view class='vipIcon'style="background:url(../../images/bg1_y@2x.png) no-repeat;background-size:160rpx 200rpx;">
+<view class='SupView' style="background:url(../../images/sup@2x.png) no-repeat;background-size:74rpx 74rpx;"></view>
+<view class='supPrice'>￥{{item.discount_amount}}</view>
+</view>
+<view class='rightView' style="background:url(../../images/bg1_w@2x.png) no-repeat;background-size:100% 100%;">
     <view class='rightView1'>
         <view class='rightViw11'>
-          <view class='activityIconBG'>
-            <view class='activityIcon'></view>
+          <view class='activityIconBG' style="background:url(../../images/icon@2x.png) no-repeat;background-size:36rpx 36rpx;">
+            
           </view>
-          <text class='activity_name'>国庆活动</text>
+          <text class='activity_name'>{{item.discount_title}}</text>
         </view>
          <view class='rightView12'>
             <view class='dot'> </view>
             <view class='reduce'>减</view>
-            <view class='reduceText'>满400减40</view>
+            <view class='reduceText'>{{item.discount_reduce_amount}}</view>
         </view>
          <view class='rightView13'>
             <view class='dot'> </view>
-            <view class='reduceText outTime'>失效时间:2018-07-07 20:33:00</view>
+            <view class='reduceText outTime'>失效时间:{{item.discount_outtime}}</view>
         </view>  
     </view>
     <view class='rightView2'>
     <view class='useView'>
-    <view class='usetext'>
-        <text>立即</text>
-        <text>使用</text>
+    <view class='usetext'wx:if="{{item.isTimeOut==1}}" style='background:#BCBCBC;' bindtap='useSup' data-index='{{index}}'>
+        <text>已经</text>
+        <text>过期</text>
     </view>
+    <view class='usetext'wx:elif="{{item.is_use==1}}" style='background:#bcbcbc;' bindtap='useSup' data-index='{{index}}'>
+        <text>已经</text>
+        <text>使用</text>
+    </view> 
+    <view class='usetext'wx:elif="{{item.is_get==1}}" style='background:#bcbcbc;' bindtap='useSup' data-index='{{index}}'>
+        <text>已经</text>
+        <text>领取</text>
+    </view>
+    <view class='usetext'wx:elif="{{item.is_get==0}}" style='background:#fdb862;' bindtap='useSup' data-index='{{index}}'>
+        <text>立即</text>
+        <text>领取</text>
+    </view>    
     </view>
     </view>
 </view>

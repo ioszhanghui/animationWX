@@ -12,7 +12,7 @@ function wxRequest(method,requestHandler){
   wx.request({
     url: requestHandler.url,
     header:{
-      "content-type": method == "GET" ? 'application/json' :"application/x-www-form-urlencoded"
+      "content-type":'application/json'
     },
     data:requestHandler.param,
     method:method,

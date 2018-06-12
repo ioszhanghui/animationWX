@@ -1,41 +1,71 @@
-Page({
 
+var network = require('../../utils/network.js');
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    lists:[{
-      money:"50",
-      activity:"双十一活动",
-      reduce_acitivity:"满400减20",
-      outtime:"2018-0622 09:43:48",
-      isuse:"1"
-    }]
+    lists:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var obj =options;
-    console.log(decodeURIComponent(obj.imageurl)+"图片链接");
-    console.log(obj.imageurl+"图片链接");
+  onLoad: function () {
+    this.loadData();
   },
+  /*领取优惠券*/
+  useSup: function (options){
+    var that = this;
+    let index = parseInt(options.currentTarget.dataset.index);
+    console.log(index+"index");
+    console.log(JSON.stringify(that.lists));
+    if (that.lists[index].is_get == 1){
+      console.log("领取过了");
+      return;
+    }
+    network.RequestPost({
+      param: {
+        open_id: "1",
+        discount_id: that.lists[index].discount_id
+      },
+      url: "http://39.105.115.133:8081/getBonusList",
+      success: function (res) {
+        if(res.code==200){
+          wx.showToast({
+            title: '领取成功',
+          })
+          //刷新一下
+          that.lists[index].is_get ="1";
+          that.setData({
+            lists: that.lists
+          })
+        }
+      },
+      fail: function () {
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+      }
+    })
   },
+  /*加载数据*/
+  loadData:function(){
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
+    var that = this;
+    network.RequestPost({
+      param: {
+        open_id:"1",
+      },
+      url: "http://39.105.115.133:8081/getBonusList",
+      success: function (res) {
+        that.setData({
+          lists:res.data
+        })
+      },
+      fail: function () {
+
+      }
+    })
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
