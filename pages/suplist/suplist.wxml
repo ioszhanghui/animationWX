@@ -1,0 +1,16 @@
+
+<scroll-view scroll-y = "true">
+  <view class='bgContain' wx:for="{{list}}" bindtap='goToNextPage' data-result="{{item}}">
+  <view class='bgView' style='background:url(../../images/bg2_all@2x.png) no-repeat;background-size:650rpx 212rpx;'>
+      <view class='topView'> 
+          <image src='' class='icon'>
+          </image>
+          <text class='sup'>{{item.discount_title}}</text>
+       </view> 
+      <view class='bottomView'>
+        <text class='com text1'>麦当劳中国有限公司</text>
+        <text class='com text2'>有效至:{{item.discount_outtime}}</text>
+      </view>
+  </view>
+  </view>
+</scroll-view>

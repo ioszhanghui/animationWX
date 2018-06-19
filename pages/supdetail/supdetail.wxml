@@ -1,0 +1,18 @@
+<view class='bg'>
+<view class='bgView' style='background:url("../../images/bg_all@2x.png") no-repeat;background-size:702rpx 674rpx;'>
+<view class='com'>
+    <text>麦当劳中国有限公司</text>
+</view>
+<view class='top2'>
+    <text class='title'>{{data.discount_title}}  </text>
+    <text class='subtitle'>向宇小丸子</text>
+</view>
+<view class='top3'>
+  <view class='code'>
+      <text class='codesub'>您的领取码是</text>
+      <text class='codetext'>{{data.discount_code}}</text>
+  </view>
+  <text class='date'>有效期至:{{data.discount_create_time}}-{{data.discount_outtime}}</text>
+</view>
+</view>
+</view>

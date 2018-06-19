@@ -12,7 +12,9 @@
     "pages/alert/alert",
     "pages/listPage/listPage",
     "pages/test/test",
-    "pages/sup/sup"
+    "pages/sup/sup",
+    "pages/suplist/suplist",
+    "pages/supdetail/supdetail"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -30,7 +32,7 @@
         },
         {
           "text": "搜索",
-          "pagePath": "pages/test/test"
+          "pagePath": "pages/suplist/suplist"
         },
         {
           "text": "我的",

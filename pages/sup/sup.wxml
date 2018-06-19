@@ -1,6 +1,5 @@
 <scroll-view scroll-y="true"> 
-<navigator url='' wx:for="{{lists}}">
-<view class='BgView'>
+<view class='BgView' wx:for="{{lists}}">
 <view class='vipIcon'style="background:url(../../images/bg1_y@2x.png) no-repeat;background-size:160rpx 200rpx;">
 <view class='SupView' style="background:url(../../images/sup@2x.png) no-repeat;background-size:74rpx 74rpx;"></view>
 <view class='supPrice'>￥{{item.discount_amount}}</view>
@@ -45,5 +44,4 @@
     </view>
 </view>
 </view>
-</navigator>
 </scroll-view>
